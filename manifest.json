@@ -1,7 +1,7 @@
 {
     "name": "PWA Login",
     "short_name": "Login",
-    "start_url": "/",
+    "start_url": "/pruebapwa/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#007bff",
