@@ -6,15 +6,76 @@
   font-family: Arial, sans-serif;
 }
 
-/* Reset y pantalla completa */
+
+/* En style.css */
+.table-container {
+  max-height: 50vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#transporteFormView .form {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Reset completo para iOS */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
+  position: fixed; /* Crítico para iOS */
+  -webkit-text-size-adjust: 100%; /* Previene zoom automático */
 }
+/* En style.css */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.chart-card {
+  margin-bottom: 16px;
+}
+
+.company-header {
+  margin-bottom: 16px;
+  padding: 12px;
+}
+.app-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+  padding-top: calc(16px + env(safe-area-inset-top));
+  padding-bottom: calc(16px + env(safe-area-inset-bottom) + 60px); /* 60px para navbar */
+}
+
+/* Corrección específica para Safari iOS */
+@supports (-webkit-touch-callout: none) {
+  .app-container {
+    height: -webkit-fill-available;
+  }
+  
+  .main-content {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom) + 60px);
+  }
+}
+
+
 
 /* Evitar zoom automático en inputs en iOS */
 @media screen and (max-device-width: 480px) {
