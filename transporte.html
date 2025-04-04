@@ -4,8 +4,8 @@
     <!-- Añadir estos meta tags en el <head> -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Constructora Ariguani">
-<link rel="apple-touch-icon" href="icon-192x192.png">
+<meta name="apple-mobile-web-app-title" content="Synergy">
+<link rel="apple-touch-icon" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transporte - Constructora Ariguani</title>
@@ -159,5 +159,30 @@
     <script src="app.js"></script>
     <link rel="manifest" href="/manifest.json">
 <script src="install.js"></script>
+<script>
+    // Fix para scroll en iOS
+    function setupIOSScroll() {
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        // Deshabilitar el bounce effect
+        document.body.style.overscrollBehaviorY = 'none';
+        
+        // Asegurar que el viewport no se mueva con el teclado
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+          input.addEventListener('focus', () => {
+            setTimeout(() => {
+              document.scrollingElement.scrollTop = input.getBoundingClientRect().top - 100;
+            }, 100);
+          });
+        });
+        
+        // Prevenir zoom en inputs
+        document.addEventListener('gesturestart', e => e.preventDefault());
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', setupIOSScroll);
+    window.addEventListener('load', setupIOSScroll);
+    </script>
 </body>
 </html>
