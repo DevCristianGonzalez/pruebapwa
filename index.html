@@ -2,7 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-
+<!-- Añadir estos meta tags en el <head> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Constructora Ariguani">
+    <link rel="apple-touch-icon" href="icon-192x192.png">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
     <title>Synergy - Login</title>
     <link rel="stylesheet" href="style.css">
@@ -42,5 +46,25 @@
     <script src="login.js"></script>
     <link rel="manifest" href="/manifest.json">
 <script src="install.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+      const swToRegister = isIOS() ? 'ios-sw.js' : 'sw.js';
+      
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register(swToRegister)
+          .then(registration => {
+            console.log('SW registered:', registration);
+            if (isIOS()) registration.update();
+          })
+          .catch(err => console.log('SW registration failed:', err));
+      });
+      
+      function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+               (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      }
+    }
+    </script>
+
 </body>
 </html>
