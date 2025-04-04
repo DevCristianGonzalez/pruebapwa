@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Constructora Ariguani</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <main class="main-content">
+            <!-- Header con información de la empresa -->
+            <div class="company-header">
+                <div class="avatar">
+                    <span>A</span>
+                </div>
+                <div>
+                    <h1 class="company-name">Constructora Ariguani SAS</h1>
+                    <p class="project-name">Proyecto Rura del sol III</p>
+                </div>
+            </div>
+            
+            <!-- Tarjetas de estadísticas -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">250</div>
+                    <div class="stat-label">Entradas (m3)</div>
+                    <div class="stat-sublabel">Transporte</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">300</div>
+                    <div class="stat-label">Salidas (m3)</div>
+                    <div class="stat-sublabel">Trasporte</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Por sincronizar</div>
+                    <div class="stat-sublabel">Transporte</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Pendientes</div>
+                    <div class="stat-sublabel">Solicitudes</div>
+                </div>
+            </div>
+            
+            <!-- Gráfico de barras -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h2 class="chart-title">Materiales con mayor movimiento</h2>
+                    <div class="chart-subtitle">Transporte</div>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-bar-container">
+                        <div class="chart-bar-header">
+                            <span></span>
+                            <span>520158</span>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar yellow" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-bar-container">
+                        <div class="chart-bar-header">
+                            <span></span>
+                            <span>316352</span>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar red" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-bar-container">
+                        <div class="chart-bar-header">
+                            <span></span>
+                            <span>220739</span>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar orange" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botones adicionales -->
+            <div class="empty-stats-grid">
+                <div class="empty-stat-card">
+                    <div class="triangle-icon">
+                        <div class="triangle"></div>
+                    </div>
+                    <span class="empty-stat-number">0</span>
+                </div>
+                
+                <div class="empty-stat-card">
+                    <div class="triangle-icon">
+                        <div class="triangle"></div>
+                    </div>
+                    <span class="empty-stat-number">0</span>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <button class="nav-button active" data-page="dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Inicio</span>
+            </button>
+            
+            <button class="nav-button" data-page="transporte">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 6h13l3 4h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"></path>
+                    <circle cx="9" cy="17" r="1"></circle>
+                    <circle cx="19" cy="17" r="1"></circle>
+                </svg>
+                <span>Transporte</span>
+            </button>
+            
+            <button class="nav-button" data-page="opciones">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>opciones</span>
+                <span class="notification-badge">3</span>
+            </button>
+        </nav>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
